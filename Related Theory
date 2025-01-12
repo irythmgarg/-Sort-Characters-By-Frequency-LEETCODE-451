@@ -1,0 +1,40 @@
+Theory Explanation:
+Custom Comparator:
+
+A custom comparator (lambda) is defined to ensure that the priority queue sorts pairs of characters and their frequencies in descending order of frequency.
+The comparator compares the second element of the pair (p1.second < p2.second), ensuring that the character with higher frequency is given higher priority in the queue.
+Counting Frequencies:
+
+We use an unordered map (mp) to count the frequency of each character in the input string s. This helps in understanding how often each character appears.
+Using a Priority Queue:
+
+A priority queue (implemented as a max-heap) is used to store the character-frequency pairs. This allows us to efficiently retrieve the character with the highest frequency.
+Building the Result String:
+
+We repeatedly pop elements from the priority queue, starting with the character with the highest frequency. For each character, we append it to the result string as many times as its frequency indicates.
+Returning the Result:
+
+Once all characters have been processed, the result string is returned, which contains the characters sorted by their frequencies in descending order.
+Space Complexity:
+Auxiliary Space:
+
+We use an unordered map to store the frequencies of characters, which requires O(n) space, where n is the length of the string.
+The priority queue stores the pairs of characters and their frequencies. In the worst case, there are n distinct characters in the string, so the priority queue will also require O(n) space.
+Final Space Complexity: O(n), where n is the length of the string.
+
+Time Complexity:
+Counting Frequencies:
+
+We iterate through the string once to count the frequencies of each character, which takes O(n) time, where n is the length of the string.
+Building the Priority Queue:
+
+We insert n elements (character-frequency pairs) into the priority queue. Each insertion takes O(log n) time. Therefore, this step takes O(n log n) time.
+Building the Result String:
+
+We pop elements from the priority queue one by one. Each pop operation takes O(log n) time, and we do this n times, so this step also takes O(n log n) time.
+For each character, we append it to the result string based on its frequency, which involves creating a string of length n in total. This operation takes O(n) time.
+Final Time Complexity: O(n log n), where n is the length of the string.
+Overall Complexity:
+Time Complexity: O(n log n), where n is the length of the string.
+Space Complexity: O(n), where n is the length of the string.
+This solution uses a priority queue to sort the characters by their frequencies and efficiently constructs the result string with a time complexity of O(n log n).
